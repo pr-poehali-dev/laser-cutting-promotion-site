@@ -55,62 +55,68 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b bg-white sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
+      <header className="bg-industrial text-white py-4 px-6">
+        <div className="container mx-auto">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <Icon name="Zap" size={32} className="text-primary" />
-              <h1 className="text-2xl font-bold text-industrial">LaserCut Pro</h1>
+            {/* Logo */}
+            <div className="text-2xl font-bold">
+              <span className="text-primary">RASKROY</span>
+              <span className="text-white">.PRO</span>
             </div>
-            <nav className="hidden md:flex items-center space-x-8">
-              <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">Услуги</a>
-              <a href="#portfolio" className="text-muted-foreground hover:text-primary transition-colors">Портфолио</a>
-              <a href="#pricing" className="text-muted-foreground hover:text-primary transition-colors">Прайс</a>
-              <a href="#contacts" className="text-muted-foreground hover:text-primary transition-colors">Контакты</a>
-            </nav>
-            <Button className="bg-primary hover:bg-primary/90">
-              <Icon name="Phone" size={16} className="mr-2" />
-              Заказать звонок
-            </Button>
+
+            {/* Contact Info */}
+            <div className="hidden lg:flex items-center space-x-8 text-sm">
+              <div>Чехов, д.Ивачково, Лесная улица, 13</div>
+              <div className="flex flex-col text-right">
+                <div className="font-semibold">+7(916)906-62-97</div>
+                <div className="text-gray-300">info@raskroy.pro</div>
+              </div>
+              <Button className="bg-primary hover:bg-primary/90 text-white border border-primary rounded-none px-6">
+                Сделать заказ
+              </Button>
+            </div>
           </div>
+
+          {/* Navigation */}
+          <nav className="mt-4 pt-4 border-t border-primary">
+            <div className="flex items-center justify-between">
+              <div className="flex space-x-8 text-sm">
+                <a href="#" className="text-primary font-medium">Главная</a>
+                <a href="#about" className="text-white hover:text-primary transition-colors">О нас</a>
+                <a href="#services" className="text-white hover:text-primary transition-colors">Наши услуги</a>
+                <a href="#pricing" className="text-white hover:text-primary transition-colors">Наши цены</a>
+                <a href="#portfolio" className="text-white hover:text-primary transition-colors">Наши работы</a>
+                <a href="#contacts" className="text-white hover:text-primary transition-colors">Контакты</a>
+              </div>
+            </div>
+          </nav>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-industrial to-industrial/80 text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-5xl font-bold mb-6 leading-tight">
-                Лазерная резка металла
-                <span className="text-primary block">любой сложности</span>
-              </h2>
-              <p className="text-xl mb-8 text-white/90">
-                Обрабатываем нержавеющую, конструкционную сталь, алюминий и титан 
-                по вашему техническому заданию с точностью до 0.1мм
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-white">
-                  <Icon name="FileText" size={20} className="mr-2" />
-                  Рассчитать стоимость
-                </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-industrial">
-                  <Icon name="Play" size={20} className="mr-2" />
-                  Смотреть работы
-                </Button>
-              </div>
+      <section 
+        className="min-h-screen flex items-center justify-start bg-cover bg-center relative"
+        style={{
+          backgroundImage: `url('/img/e28ce00b-c44d-4f64-bd1a-19e849f27992.jpg')`,
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-3xl">
+            <div className="mb-8">
+              <span className="text-primary text-lg font-medium tracking-wide">
+                ОТЛИЧНОЕ КАЧЕСТВО ПО РАЗУМНОЙ ЦЕНЕ
+              </span>
             </div>
-            <div className="relative">
-              <img 
-                src="/img/e28ce00b-c44d-4f64-bd1a-19e849f27992.jpg" 
-                alt="Лазерная резка металла"
-                className="rounded-lg shadow-2xl w-full object-cover h-96"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-accent-red text-white p-4 rounded-lg shadow-lg">
-                <div className="text-2xl font-bold">99.8%</div>
-                <div className="text-sm">Точность резки</div>
-              </div>
-            </div>
+            <h1 className="text-6xl lg:text-7xl font-bold text-white leading-tight mb-8">
+              Лазерная резка листового <br />
+              <span className="text-orange-400">металла</span> и труб
+            </h1>
+            <p className="text-xl text-white/90 mb-12 max-w-2xl">
+              Обрабатываем нержавеющую, конструкционную сталь, алюминий и титан 
+              по вашему техническому заданию
+            </p>
           </div>
         </div>
       </section>
@@ -119,7 +125,7 @@ export default function Index() {
       <section id="services" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-industrial mb-4">Наши услуги</h3>
+            <h2 className="text-4xl font-bold text-industrial mb-4">Наши услуги</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Профессиональная лазерная резка с использованием современного оборудования
             </p>
@@ -152,7 +158,7 @@ export default function Index() {
       <section id="portfolio" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-industrial mb-4">Портфолио работ</h3>
+            <h2 className="text-4xl font-bold text-industrial mb-4">Наши работы</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Примеры выполненных проектов различной сложности
             </p>
@@ -182,7 +188,7 @@ export default function Index() {
       <section id="pricing" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-industrial mb-4">Прайс-лист</h3>
+            <h2 className="text-4xl font-bold text-industrial mb-4">Наши цены</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Стоимость работ зависит от сложности детали и типа материала
             </p>
@@ -229,7 +235,7 @@ export default function Index() {
       <section id="contacts" className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold text-industrial mb-4">Контакты</h3>
+            <h2 className="text-4xl font-bold text-industrial mb-4">Контакты</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Свяжитесь с нами для обсуждения вашего проекта
             </p>
@@ -243,7 +249,7 @@ export default function Index() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-industrial mb-2">Телефон</h4>
-                  <p className="text-lg text-primary font-semibold">+7 (999) 123-45-67</p>
+                  <p className="text-lg text-primary font-semibold">+7 (916) 906-62-97</p>
                   <p className="text-muted-foreground">Работаем 24/7</p>
                 </div>
               </div>
@@ -254,7 +260,7 @@ export default function Index() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-industrial mb-2">Email</h4>
-                  <p className="text-lg text-primary font-semibold">info@lasercut.pro</p>
+                  <p className="text-lg text-primary font-semibold">info@raskroy.pro</p>
                   <p className="text-muted-foreground">Ответим в течение часа</p>
                 </div>
               </div>
@@ -265,7 +271,7 @@ export default function Index() {
                 </div>
                 <div>
                   <h4 className="font-semibold text-industrial mb-2">Адрес</h4>
-                  <p className="text-lg">г. Москва, ул. Промышленная, 25</p>
+                  <p className="text-lg">Чехов, д.Ивачково, Лесная улица, 13</p>
                   <p className="text-muted-foreground">Производственный комплекс</p>
                 </div>
               </div>
@@ -318,8 +324,7 @@ export default function Index() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Icon name="Zap" size={24} className="text-primary" />
-                <h4 className="text-xl font-bold">LaserCut Pro</h4>
+                <h4 className="text-xl font-bold"><span className="text-primary">RASKROY</span><span className="text-white">.PRO</span></h4>
               </div>
               <p className="text-white/80">
                 Профессиональная лазерная резка металла с высокой точностью и качеством
@@ -349,15 +354,15 @@ export default function Index() {
             <div>
               <h5 className="font-semibold mb-4">Контакты</h5>
               <div className="space-y-2 text-white/80">
-                <p>+7 (999) 123-45-67</p>
-                <p>info@lasercut.pro</p>
-                <p>г. Москва, ул. Промышленная, 25</p>
+                <p>+7 (916) 906-62-97</p>
+                <p>info@raskroy.pro</p>
+                <p>Чехов, д.Ивачково, Лесная улица, 13</p>
               </div>
             </div>
           </div>
           
           <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
-            <p>&copy; 2024 LaserCut Pro. Все права защищены.</p>
+            <p>&copy; 2024 RASKROY.PRO. Все права защищены.</p>
           </div>
         </div>
       </footer>
